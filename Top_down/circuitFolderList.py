@@ -7,7 +7,7 @@ from exif import Image
 csvpath = r'\\Cdcgpnas02\CGDI\Top_Down'
 ind_circuits = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2'
 pix = ('JPG','jpg')
-bad_ext = ('.docx', '.DOCX','.db','.DB','.pdf','.PDF') 
+bad_ext = ('.docx', '.DOCX','.db','.DB','.pdf','.PDF')
 
 #top directory
 ind_circuits = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2'
@@ -20,21 +20,21 @@ def circuitFolderList(circuits):
        sync =  os.path.join(ind_circuits,i)
        subdirs.append(sync)
     #print(subdirs)
-    
+
     subdirs1 = []
     for i in subdirs:
         sub_dir = os.listdir(i)  #2 levels below ind_circuits
         for x in sub_dir:
             sync = os.path.join(i,x)
             subdirs1.append(sync)
-    
+
     subdirs2 = []
     for i in subdirs1:
         sub_dir2 = os.listdir(i)  #2 levels below ind_circuits
         for x in sub_dir2:
             sync = os.path.join(i,x)
             subdirs2.append(sync)
-        
+
     circuit_dict = {}
     for i in subdirs2:
         circuit = i[i.rfind('\\')+1:]
@@ -42,12 +42,3 @@ def circuitFolderList(circuits):
 
 
     return(circuit_dict,subdirs2)
-'''
-cmd = circuitFolderList(ind_circuits)
-for x,y in cmd[0].items():
-    print(x,' - ',y)
-print(len(cmd[0]))
-print(len(cmd[1]))
-#print(cmd) 
-
-'''
