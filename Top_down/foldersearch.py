@@ -6,20 +6,20 @@ from exif import Image
 csvpath = r'\\Cdcgpnas02\CGDI\Top_Down'
 ind_circuits = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2'
 pix = ('JPG','jpg')
-bad_ext = ('.docx', '.DOCX','.db','.DB','.pdf','.PDF','.csv','.CSV')
+bad_ext = ('.docx', '.DOCX','.db','.DB','.pdf','.PDF','.csv','.CSV') 
 test = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2\Indiana North\Carmel\N1325531203'
 
 def foldersearch(folders):
     subdirs = []
     #test folder - remove docx and thumbs from dirs
-
+  
     top_dir = os.listdir(folders)
     for i in top_dir:
         if i.endswith(bad_ext):
             top_dir.remove(i)
+    
 
-
-    #get full dir for the test circuits
+    #get full dir for the test circuits 
     for i in top_dir:
         dir = os.path.join(folders,i)
         subdirs.append(dir)
@@ -43,3 +43,8 @@ def foldersearch(folders):
 
     return piclist,folders
 
+#test validity        
+#test = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2\Indiana North\Carmel\N1323101245'
+#lit = foldersearch(test)
+#print(len(lit[0]))   
+#print(lit[0])    
