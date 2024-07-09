@@ -6,7 +6,7 @@ def makecsv(circuitid,dir,csvrows):
     
     try:
         
-        csv_file = circuitid + ".csv"
+        csv_file = circuitid + "_top_down_shots.csv"
         full_path = os.path.join(dir,csv_file)
         print (full_path)
         
