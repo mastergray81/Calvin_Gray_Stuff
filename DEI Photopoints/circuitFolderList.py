@@ -28,7 +28,7 @@ def circuitFolderList(circuits):
     
     subdirs2 = []
     for i in subdirs1:
-        sub_dir2 = os.listdir(i)  #2 levels below ind_circuits
+        sub_dir2 = os.listdir(i)  #3 levels below ind_circuits
         for x in sub_dir2:
             sync = os.path.join(i,x)
             subdirs2.append(sync)
