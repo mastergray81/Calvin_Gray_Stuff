@@ -42,9 +42,3 @@ def foldersearch(folders):
         #print(piclist)
 
     return piclist,folders
-
-#test validity        
-#test = r'\\Cdcgpnas02\CGDI\DEI_TDSIC2\Indiana North\Carmel\N1323101245'
-#lit = foldersearch(test)
-#print(len(lit[0]))   
-#print(lit[0])    
